@@ -1,4 +1,4 @@
-extends Button
+extends Control
 
 # class member variables go here, for example:
 # var a = 2
@@ -15,5 +15,13 @@ func _ready():
 #	pass
 
 
-func _on_Button_pressed():
+func _on_LocalTestButton_pressed():
 	bytes2var(PoolByteArray([20, 0, 0, 0, 0, 0, 0, 255]))
+
+
+func _on_ListenerButton_pressed():
+	get_tree().change_scene("res://scene/listener.tscn")
+
+
+func _on_SenderButton_pressed():
+	get_tree().change_scene("res://scene/sender.tscn")
