@@ -2,7 +2,7 @@
 
 [ext_resource path="res://script/sender.gd" type="Script" id=1]
 
-[node name="Node" type="Node"]
+[node name="Node" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -47,9 +47,34 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 240.0
+margin_top = 228.0
 margin_right = 916.0
-margin_bottom = 260.0
+margin_bottom = 248.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Send packet"
+flat = false
+align = 1
+_sections_unfolded = [ "Margin" ]
+
+[node name="SendMaliciousPacketButton" type="Button" parent="MarginContainer/VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 252.0
+margin_right = 916.0
+margin_bottom = 272.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -64,8 +89,9 @@ group = null
 text = "Send malicious packet"
 flat = false
 align = 1
-_sections_unfolded = [ "Margin" ]
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/SendPacketButton" to="." method="_on_SendPacketButton_pressed"]
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/SendMaliciousPacketButton" to="." method="_on_SendMaliciousPacketButton_pressed"]
 
 
