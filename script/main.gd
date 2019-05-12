@@ -11,7 +11,7 @@ func _ready():
 #	pass
 
 func _on_LocalTestButton_pressed():
-	bytes2var(PoolByteArray([20, 0, 0, 0, 2, 0, 0, 0, 4, 7]))
+	bytes2var(PoolByteArray([20, 0, 0, 0, 1, 0, 0, 0, 4]))
 	#bytes2var(PoolByteArray([20, 0, 0, 0, 0, 0, 0, 255]))
 
 func _on_ListenerButton_pressed():
