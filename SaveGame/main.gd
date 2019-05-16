@@ -15,7 +15,7 @@ func _on_SaveGameButton_pressed():
 	save_dict["data2"] = "baby don't hurt me"
 	save_dict["data3"] = 42
 	
-	save_file.store_line(to_json(save_dict))
+	save_file.store_string(to_json(save_dict))
 	save_file.close()
 	print("file saved")
 
