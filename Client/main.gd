@@ -16,10 +16,10 @@ func _on_SendPacketButton_pressed():
 	#udp.put_var(PoolStringArray(['test']))
 	
 	# Put data into memory
-	udp.put_packet(PoolByteArray([23, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 72, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100, 33]))
+	#udp.put_packet(PoolByteArray([23, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 72, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100, 33]))
 	#udp.put_packet(PoolByteArray([23, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0, 116, 101, 97]))
-	# Try to read data that still exists in memory until it is null termin
-	#udp.put_packet(PoolByteArray([23, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 255]))
+	# Try to read data that still exists in memory until it is null terminated
+	udp.put_packet(PoolByteArray([23, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 255]))
 
 
 func _on_SendMaliciousPacketButton_pressed():

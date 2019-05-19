@@ -1,31 +1,28 @@
 extends Node
 
-const SAVE_PATH = "res://save.json"
+const SAVE_PATH_VAR = "res://save.bin"
 
 func _ready():
 	pass
 
 
 func _on_SaveGameButton_pressed():
+ 	# Store data as variant
 	var save_file = File.new()
-	save_file.open(SAVE_PATH, File.WRITE);
+	save_file.open(SAVE_PATH_VAR, File.WRITE)
 	
-	var save_dict = {}
-	save_dict["data1"] = "what is love"
-	save_dict["data2"] = "baby don't hurt me"
-	save_dict["data3"] = 42
-	
-	save_file.store_string(to_json(save_dict))
+	save_file.store_var("Level: 15")
 	save_file.close()
 	print("file saved")
 
 
 func _on_LoadGameButton_pressed():
+	# Load data saved as variant
 	var save_file = File.new()
-	if not save_file.file_exists(SAVE_PATH):
+	if not save_file.file_exists(SAVE_PATH_VAR):
 		print("Save file does not exist")
 		return
-	save_file.open(SAVE_PATH, File.READ)
-	
-	var data = parse_json(save_file.get_as_text())
+	save_file.open(SAVE_PATH_VAR, File.READ)
+
+	var data = save_file.get_var()
 	print(data)
