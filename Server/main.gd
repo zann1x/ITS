@@ -30,4 +30,10 @@ func my_process():
 	else:
 		var text = rich_text_label.get_text()
 		rich_text_label.set_text(text + "UDP packet received!\n")
-		udp.get_var()
+		var received_var = udp.get_var()
+		
+		var client_ip = udp.get_packet_ip()
+		var client_port = udp.get_packet_port()
+		udp.set_dest_address(client_ip, client_port)
+		udp.put_var("I received '" + str(received_var) + "'")
+		

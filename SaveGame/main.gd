@@ -11,7 +11,7 @@ func _on_SaveGameButton_pressed():
 	var save_file = File.new()
 	save_file.open(SAVE_PATH_VAR, File.WRITE)
 	
-	save_file.store_var("Level: 15")
+	save_file.store_var([4, 7])
 	save_file.close()
 	print("file saved")
 
